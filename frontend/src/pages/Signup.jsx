@@ -11,8 +11,8 @@ import { BottomWarning } from "../components/BottomWarning";
 
 
 export const Signup = () => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [firstname, setFirstName] = useState('');
+    const [lastname, setLastName] = useState('');
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -38,8 +38,8 @@ export const Signup = () => {
                     <Button onClick={async () => {
                         const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
                             username,
-                            firstName,
-                            lastName,
+                            firstname,
+                            lastname,
                             password
                         });
                         localStorage.setItem("token",response.data.token);
